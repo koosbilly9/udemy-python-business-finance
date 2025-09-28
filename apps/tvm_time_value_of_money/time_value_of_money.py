@@ -19,7 +19,7 @@ class TimeValueOfMoney:
         present_value: {self.present_value}, future_value : {self.future_value }, interest: {self.interest}, period : {self.period}
         
         Future value = PV(1+R)**P   {self.present_value}x(1+{self.interest})**{self.period} = {self.fv()}
-        Present value = FV\(1+R)**P {self.future_value}\(1+{self.interest})**{self.period} = {self.pv()}
+        Present value = FV/(1+R)**P {self.future_value}/(1+{self.interest})**{self.period} = {self.pv()}
         """
 
         return string_result

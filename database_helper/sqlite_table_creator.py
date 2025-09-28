@@ -1,9 +1,10 @@
 import pandas as pd
-from sqlalchemy import create_engine, text, inspect
+from sqlalchemy import create_engine, text, inspect, Text
 from sqlalchemy.schema import CreateTable
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Float
 import os
+from pathlib import Path
 
 # Create a Base for the declarative models
 Base = declarative_base()
@@ -16,7 +17,7 @@ class SQLiteTableCreator:
 
     def __init__(self, db_path, csv_dir):
         """
-        Initializes the sqlite_table_creator.
+        Initializes the database_helper.
 
         Args:
             db_path (str): The path to the SQLite database file.
@@ -74,6 +75,22 @@ class SQLiteTableCreator:
             print(f"✅ Data loaded successfully into table '{table_name}'.")
         except Exception as e:
             print(f"❌ Error loading data into table '{table_name}': {e}")
+
+    def sql_result_to_dict (sql: Text) -> dict :
+        return {}
+
+    def test_db(self, my_database_path):
+        # Delete testDB is it exits
+        file_to_check = Path(my_database_path)
+        if file_to_check.exists():
+            file_to_check.unlink()
+
+        # # Verify the tables were created
+        # print("\n🔍 Verifying database contents...")
+        # inspector = inspect(db_creator.engine)
+        # tables = inspector.get_table_names()
+        # print(f"Database contains the following tables: {tables}")
+
 
     def process_csv_files(self):
         """
