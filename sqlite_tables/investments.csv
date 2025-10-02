@@ -1,4 +1,4 @@
-investment_number number, Description char, Entity char, rate number, Period_month number, Period_year number, pv number, fv number
+invest_no,description,entity,rate,period_month,period_year,pv,fv
 1,"Saving","ABSA",.08,,1,,
 2,"Private loan", "Edhard pty ltd",,3,,7500,7900
 3,"Bridge financing", "Shift Financing pty ltd",,3,,25000,25500
